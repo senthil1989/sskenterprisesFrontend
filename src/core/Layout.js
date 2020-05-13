@@ -6,7 +6,8 @@ const Layout = ({
     title = "Title",
     description = "Description",
     className,
-    children
+    children,
+    toggleModal
 }) => (
     <div>
         <Menu />

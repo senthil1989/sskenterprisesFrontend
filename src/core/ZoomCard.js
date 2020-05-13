@@ -3,8 +3,9 @@ import { Link, Redirect } from 'react-router-dom';
 import ShowImage from './ShowImage';
 import moment from 'moment';
 import { addItem, updateItem, removeItem } from './CartHelpers';
+import ZoomImage from './ZoomImage';
 
-const Card = ({
+const ZoomCard = ({
   product,
   showViewProductButton = true,
   showAddToCartButton = true,
@@ -101,10 +102,8 @@ const Card = ({
       <div className="card-body">
         {shouldRedirect(redirect)}
         <div >
-        <Link to={`/product/${product._id}`} className="card-Link">
-        <ShowImage item={product} url="product" />
+        <ZoomImage item={product} url="product" />
         <div className="card-title">{product.name}</div>
-        </Link>
         </div>
         <p className="card-p">{product.description.substring(0, 100)} </p>
         <p className="card-p card-price"><span class="a-price-symbol">₹</span>{product.price}</p>
@@ -142,4 +141,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default ZoomCard;

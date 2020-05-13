@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './styles.scss';
 import Signup from './user/Signup';
+import Seller from './user/SignUpSeller';
 import Signin from './user/Signin';
 import Home from './core/Home';
 import PrivateRoute from './auth/PrivateRoute';
@@ -29,6 +30,7 @@ const Routes = () => {
                 <Route path="/shop" exact component={Shop} />
                 <Route path="/signin" exact component={Signin} />
                 <Route path="/signup" exact component={Signup} />
+                <Route path="/signup/seller" exact component={Seller} />
                 <PrivateRoute path="/user/dashboard" exact component={Dashboard} />
                 <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
                 <AdminRoute path="/create/category" exact component={AddCategory} />

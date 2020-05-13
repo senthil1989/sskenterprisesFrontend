@@ -114,15 +114,17 @@ const Search = () => {
     );
 
     return (
+        <>
         <li className="nav-item search-width">
                  <div className="search-product">{searchForm()}</div>
             </li>
-        // <div className="row">
+        <div className="row">
            
-        //     <div className="container-fluid mb-3">
-        //         {searchedProducts(results)}
-        //     </div>
-        // </div>
+            <div className="container-fluid top-m1">
+                {searchedProducts(results)}
+            </div>
+        </div>
+        </>
     );
 };
 

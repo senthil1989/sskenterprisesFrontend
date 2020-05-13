@@ -39,7 +39,7 @@ const Menu = ({ history }) => (
                 <Link
                     className="nav-link"
                     style={isActive(history, "/shop")}
-                    to="/shop"
+                    to="/signup/seller"
                 >
                     Start Selling
                 </Link>

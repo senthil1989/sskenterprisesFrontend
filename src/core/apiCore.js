@@ -111,6 +111,7 @@ export const processPayment = (userId, token, paymentData) => {
 };
 
 export const createOrder = (userId, token, createOrderData) => {
+    console.log(userId, token, createOrderData)
     return fetch(`${API}/order/create/${userId}`, {
         method: "POST",
         headers: {
@@ -119,6 +120,44 @@ export const createOrder = (userId, token, createOrderData) => {
             Authorization: `Bearer ${token}`
         },
         body: JSON.stringify({ order: createOrderData })
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+
+export const reviewPost = (data) => {
+    console.log(data)
+    return fetch(`${API}/product/review/create/${data.productId}/${data.user._id}`, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${data.token}`
+        },
+        body: JSON.stringify(data.reviewState)
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+export const getReview = productId => {
+    return fetch(`${API}/product/review/${productId}`, {
+        method: "GET"
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+export const getAllReviewList = productId => {
+    return fetch(`${API}/products/review`, {
+        method: "GET"
     })
         .then(response => {
             return response.json();

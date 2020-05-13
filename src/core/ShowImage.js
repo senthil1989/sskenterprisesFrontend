@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { API } from "../config";
-
 const ShowImage = ({ item, url }) => {
     console.log(item,url);
    return( <div className="product-img">

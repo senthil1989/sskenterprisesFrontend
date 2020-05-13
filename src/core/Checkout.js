@@ -59,6 +59,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
     let deliveryAddress = data.address;
 
     const buy = () => {
+        console.log(products)
         setData({ loading: true });
         // send the nonce to your server
         // nonce = data.instance.requestPaymentMethod()
